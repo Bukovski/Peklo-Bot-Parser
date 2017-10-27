@@ -6,7 +6,7 @@
 - Заходим в parser.php
 
 $uidCreateNew = 00000; 
-> Тут вашь ID от страницы VK 9304105
+> Тут ваш ID от страницы VK 9304105
 
 $auth_keyCreateNew = '00aa000aaa000aaa'; 
 > Тут ваш ключ sk_auth_key от игры в виде строки '50cb122688ca8ee1eccc28437e762e72'
