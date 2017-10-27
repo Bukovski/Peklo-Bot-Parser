@@ -3,8 +3,8 @@
 //*/5 * * * * alessa /usr/bin/wget -t 1 -O - 'http://testsite.dev/phpQuery-parser/pekloBotGit/startWrap.php';
 //service cron restart
 
-$uidCreateNew = 8304102; //Тут вашь ID 9304105
-$auth_keyCreateNew = '48cb111688ca8ee9eccc20432e762e72'; //Тут ваш ключь от игры в виде строки '50cb122688ca8ee1eccc28437e762e72'
+$uidCreateNew = 000000; //Тут вашь ID 9304105
+$auth_keyCreateNew = '0aa0aa000aa00aa'; //Тут ваш ключь от игры в виде строки '50cb122688ca8ee1eccc28437e762e72'
 
 function authPeklo($uid = null, $auth_key = null) {
     $url = 'http://game-r02vk.rjgplay.com/auth/';
