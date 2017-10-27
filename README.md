@@ -25,7 +25,7 @@ sudo gedit /etc/crontab
 > Откроет в редакторе настроки для крона
 
 */5 * * * * alessa /usr/bin/wget -t 1 -O - 'http://testsite.dev/phpQuery-parser/pekloBotGit/startWrap.php'; 
-> Указываете свой адрес по которому на вашем сетвере запускается парсер(бот)
+> Указываете свой адрес по которому на вашем сервере запускается парсер(бот)
 
 service cron restart 
 > Перезапускаем крон
