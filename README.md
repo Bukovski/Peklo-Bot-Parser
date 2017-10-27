@@ -30,4 +30,6 @@ sudo gedit /etc/crontab
 service cron restart 
 > Перезапускаем крон
 
-./screanBot.png
+<p>
+	<img src="screanBot.png" alt="Bot Peklo">
+</p>

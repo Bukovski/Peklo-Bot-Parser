@@ -306,7 +306,7 @@
         document.getElementById('buttonUp').style.display = (windowH <= scrollHide)  ? 'none' : 'block';
     }
     setInterval(move, 30);
-    
+
     //сама прокрутка
     var timerScroll;
     function up() {
