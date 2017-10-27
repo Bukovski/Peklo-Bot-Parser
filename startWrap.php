@@ -11,31 +11,6 @@
     <title>Бот Пекло</title>
 </head>
 <style>
-    /*body {
-        !*https://www.gradient-animator.com!*!
-        background: linear-gradient(270deg, #0004a8, #92008c, #7b7900);
-        background-size: 600% 600%;
-
-        -webkit-animation: botPeklo 30s ease infinite;
-        -moz-animation: botPeklo 30s ease infinite;
-        animation: botPeklo 30s ease infinite;
-    }
-    @-webkit-keyframes botPeklo {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @-moz-keyframes botPeklo {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @keyframes botPeklo {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }*/
-
     body {
         background-color: black !important;
         font-family: 'Comfortaa', cursive;
@@ -54,21 +29,14 @@
         left:0;
     }
     #main-block {
-        /*position: absolute;*/
         z-index: 2;
     }
 
     .list-group-item {
-        /*background-clip: content-box;*/
         background-color: #DFE2DB !important;
     }
 
-    /*.container {
-        z-index: 0;
-    }*/
-
     .progress_width{
-        /*width: 238px;*/
         width: 73%;
         height: 16px;
         margin: 0 auto;
@@ -140,7 +108,6 @@
                                     <div class="progressItem"></div>
                                 </div>
                             </div>
-<!--                            <span class="badge">--><?php //print_r($userItems['crystal']); ?><!--</span>-->
                         </li>
                         <li class="list-group-item">Кордит
                             <div class="progress_width">
@@ -148,7 +115,6 @@
                                     <div class="progressItem"></div>
                                 </div>
                             </div>
-<!--                            <span class="badge">--><?php //print_r($userItems['cordite']); ?><!--</span>-->
                         </li>
                         <li class="list-group-item">Топливо
                             <div class="progress_width">
@@ -203,7 +169,6 @@
 
                             <li class="list-group-item text-info">
                                 <a href="https://vk.com/app3558212_82476850" target="_blank" id="enter-game" class="btn btn-success btn-block">Войти в игру</a>
-                                <!--                    <button type="button" id="button">Остановить сбор</button>-->
 
                                 <form method="post">
                                     Предел кристалов<input type="number" name="cristalLimit" value="<?php echo $cristalLimit ?>" class="form-control">
@@ -291,43 +256,15 @@
 </div>
 </div>
 
-<!--<div onclick="up()" style="display: none;" id="buttonUp">&laquo;</div>-->
 <div onclick="up()" style="display: none;" id="buttonUp"><img src="files/top.png" alt="Up"></div>
 
 <canvas id=c></canvas>
 
 <script src="lib/jquery.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
-<script src="lib/vanilla-tilt.js"></script><!--https://micku7zu.github.io/vanilla-tilt.js/index.html-->
+<script src="lib/vanilla-tilt.js"></script>
 <script>
-    /*window.onload = function () {
-        var takeResources = document.getElementById("button");
-        takeResources.className = "btn btn-block btn-warning";
-        takeResources.onclick = function() {
-            if ( this.innerHTML == "Начать сбор" ) {
-                this.innerHTML = "Остановить сбор";
-                this.className = "btn btn-block btn-warning";
-            } else {
-                this.innerHTML = "Начать сбор";
-                this.className = "btn btn-block btn-info";
-            }
-        };
-    }*/
-    /*function progress(items, itemsMax, countDiv) {
-        var i = 0;
-        var width = document.getElementsByClassName('progress_width')[countDiv].offsetWidth - 2; //получаем ширину полосы -2 отнимаем оконтовку
-        var itemsFuel = items || 0;
-        var itemsFuelMax = itemsMax;
-        (function grow() {
-            var procent = Math.round((width / 100) * (itemsFuel / (itemsFuelMax / 100))); //получаем проценты от ресурсов для шкалы прогресса
-            document.getElementsByClassName('progressItem')[countDiv].innerHTML = itemsFuel + ' / ' + itemsFuelMax;
-            if( procent <= width) {
-                document.getElementsByClassName('progressBar')[countDiv].setAttribute("style","width: " + procent + "px;background-color: #479e47;");
-            } else {
-                document.getElementsByClassName('progressBar')[countDiv].setAttribute("style","width: "+ width +"px;background-color: red;");
-            }
-        })();
-    }*/
+
     function progress(items, itemsMax, countDiv) {
         var doc = document,
             itemsFuel = items || 0,
@@ -364,52 +301,12 @@
 
     var scrollHide =  document.documentElement.clientHeight / 100 * 50;
     function move() { //функция для вызыва таймера
-       /* var brHeight = window.outerHeight; //размер окна браузера
-        var brWidth = window.outerWidth;
-        if (coordinateX > 20 || coordinateX <= -190) {
-            back = !back;
-        }
-        if (back) {
-            coordinateX += 5;
-        } else if (!back) {
-            coordinateX -= 5;
-        }
-        if (coordinateX == -190 ) {
-            //рандомный вылет зомби
-            itemsZombie = Math.floor(Math.random() * (maxItemsZombi - minItemsZombi + 1)) + minItemsZombi;
-        }
-        document.body.style.overflowX = "hidden";
-        switch (itemsZombie) {
-            case 1:
-                imgZombi.style.margin = '0px ' + ( brWidth - imgZombi.width - coordinateX) + 'px';
-                imgZombi.style.transform = "scale(1, 1)";
-                break;
-            case 2:
-                imgZombi.style.transform = "scale(-1, 1)";
-                imgZombi.style.margin = (brHeight - imgZombi.height - coordinateX) + 'px ' + ( 0 + imgZombi.width + 50) + 'px';
-                imgZombi.style.position = "fixed";
-                break;
-            case 3:
-                imgZombi.style.margin = (brHeight - imgZombi.height - coordinateX) + 'px ' + ( brWidth - imgZombi.width - 50) + 'px';
-                imgZombi.style.transform = "scale(1, 1)";
-                break;
-            case 4:
-                imgZombi.style.transform = "rotate(90deg)";
-                imgZombi.style.margin = '120px ' + coordinateX + 'px';
-                break;
-        }*/
         //появление кнопки прокрутки
         var windowH = window.pageYOffset; //прокрутка по высоте
         document.getElementById('buttonUp').style.display = (windowH <= scrollHide)  ? 'none' : 'block';
     }
     setInterval(move, 30);
-
-    //появление кнопки прокрутки
-    /*var scrollHide =  document.documentElement.clientHeight / 100 * 70;
-    setInterval(function () {
-        var windowH = window.pageYOffset; //прокрутка по высоте
-        document.getElementById('buttonUp').style.display = (windowH <= scrollHide)  ? 'none' : 'block';
-    }, 1000);*/
+    
     //сама прокрутка
     var timerScroll;
     function up() {
